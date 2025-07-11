@@ -1,0 +1,655 @@
+/* Professional Theme Styles */
+:root {
+  --primary-color: #1a1a1a;
+  --secondary-color: #f8f9fa;
+  --accent-color: #007bff;
+  --text-primary: #2c3e50;
+  --text-secondary: #6c757d;
+  --border-color: #e9ecef;
+  --shadow-light: 0 2px 10px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 4px 20px rgba(0, 0, 0, 0.15);
+  --shadow-heavy: 0 8px 30px rgba(0, 0, 0, 0.2);
+  --transition: all 0.3s ease;
+}
+
+/* General Styles */
+body {
+  font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+/* Hero Slider */
+.hero-slider {
+  margin-bottom: 0;
+  position: relative;
+}
+
+#heroCarousel {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+#heroCarousel .carousel-item {
+  height: 600px;
+  position: relative;
+}
+
+#heroCarousel .carousel-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  z-index: 1;
+}
+
+#heroCarousel .carousel-caption {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 2;
+  text-align: left;
+  padding: 0;
+}
+
+.hero-content {
+  max-width: 600px;
+  margin-left: 5%;
+  padding: 2rem;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+
+.btn-hero {
+  background-color: white;
+  color: var(--primary-color);
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: var(--transition);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-hero:hover {
+  background-color: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
+#heroCarousel .carousel-control-prev,
+#heroCarousel .carousel-control-next {
+  width: 5%;
+  opacity: 0.7;
+  transition: var(--transition);
+}
+
+#heroCarousel .carousel-control-prev:hover,
+#heroCarousel .carousel-control-next:hover {
+  opacity: 1;
+}
+
+#heroCarousel .carousel-indicators {
+  bottom: 2rem;
+}
+
+#heroCarousel .carousel-indicators button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 0 5px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  transition: var(--transition);
+}
+
+#heroCarousel .carousel-indicators button.active {
+  background-color: white;
+  transform: scale(1.2);
+}
+
+/* Section Styles */
+.featured-products,
+.why-choose-us,
+.used-shoes-gallery {
+  padding: 5rem 0;
+}
+
+.featured-products {
+  background-color: var(--secondary-color);
+}
+
+.used-shoes-gallery {
+  background-color: var(--secondary-color);
+}
+
+.section-header {
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  font-weight: 300;
+}
+
+/* Product Cards */
+.product-card {
+  background: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-light);
+  transition: var(--transition);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-heavy);
+}
+
+.product-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 250px;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.05);
+}
+
+.product-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  z-index: 2;
+}
+
+.sale-badge {
+  background-color: #dc3545;
+  color: white;
+}
+
+.new-badge {
+  background-color: #28a745;
+  color: white;
+}
+
+.product-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.product-card:hover .product-overlay {
+  opacity: 1;
+}
+
+.product-info {
+  padding: 1.5rem;
+  flex-grow: 1;
+}
+
+.product-brand {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.product-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.product-rating {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.stars {
+  color: #ffc107;
+  margin-right: 0.5rem;
+}
+
+.rating-text {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.product-price {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.price-current {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.price-original {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  text-decoration: line-through;
+  margin-left: 0.5rem;
+}
+
+.product-actions {
+  padding: 1.5rem;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+}
+
+/* Why Choose Us */
+.benefits-list {
+  padding: 2rem 0;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 2.5rem;
+}
+
+.benefit-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--primary-color);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1.5rem;
+  flex-shrink: 0;
+}
+
+.benefit-icon i {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.benefit-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.benefit-description {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.feature-image-wrapper {
+  position: relative;
+  text-align: center;
+  padding: 2rem;
+}
+
+.feature-image-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(6deg);
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(135deg, var(--primary-color) 0%, #495057 100%);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.feature-image {
+  position: relative;
+  z-index: 1;
+  max-width: 280px;
+  border-radius: 50%;
+  box-shadow: var(--shadow-heavy);
+}
+
+/* Used Shoes Cards */
+.used-shoe-card {
+  background: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-light);
+  transition: var(--transition);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.used-shoe-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-heavy);
+}
+
+.used-shoe-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+}
+
+.used-shoe-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.used-shoe-card:hover .used-shoe-image {
+  transform: scale(1.05);
+}
+
+.used-shoe-badges {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
+  display: flex;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+.used-shoe-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.used-shoe-card:hover .used-shoe-overlay {
+  opacity: 1;
+}
+
+.used-shoe-info {
+  padding: 1.5rem;
+  flex-grow: 1;
+}
+
+.condition-info {
+  margin-bottom: 0.5rem;
+}
+
+.condition-label {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.condition-value {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-transform: capitalize;
+}
+
+.used-shoe-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.used-shoe-rating {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.used-shoe-price {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.seller-info {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.used-shoe-actions {
+  padding: 1.5rem;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+}
+
+/* Button Styles */
+.btn {
+  border-radius: 50px;
+  font-weight: 600;
+  transition: var(--transition);
+  border: 2px solid transparent;
+}
+
+.btn-dark {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-dark:hover {
+  background-color: #333;
+  border-color: #333;
+  transform: translateY(-2px);
+}
+
+.btn-outline-dark {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+  background-color: transparent;
+}
+
+.btn-outline-dark:hover {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.btn-outline-light {
+  border-color: white;
+  color: white;
+}
+
+.btn-outline-light:hover {
+  background-color: white;
+  color: var(--primary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .hero-content {
+    margin-left: 2%;
+    padding: 1rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .section-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .featured-products,
+  .why-choose-us,
+  .used-shoes-gallery {
+    padding: 3rem 0;
+  }
+
+  .feature-image-bg {
+    width: 200px;
+    height: 200px;
+  }
+
+  .feature-image {
+    max-width: 180px;
+  }
+
+  .benefit-item {
+    margin-bottom: 2rem;
+  }
+
+  .benefit-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 1rem;
+  }
+
+  .benefit-icon i {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  #heroCarousel .carousel-item {
+    height: 400px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .btn-hero {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .section-header.d-flex {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 1rem;
+  }
+}
+
+/* Animation Classes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Loading States */
+.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.loading::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* product details style */
